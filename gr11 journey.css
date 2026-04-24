@@ -14,8 +14,13 @@ h2{color:var(--primary);margin-bottom:14px}
 .artifact strong{display:block;margin-bottom:8px}
 .letter{background:#fff7df;border-left:6px solid #ffb020;border-radius:16px;padding:18px}
 footer{text-align:center;padding:30px;color:#4b5563}
-.bg-shape{position:fixed;border-radius:50%;filter:blur(10px);opacity:.25;z-index:-1}
+.bg-shape{position:fixed;border-radius:50%;filter:blur(10px);opacity:.25;z-index:-1; animation: float 6s ease-in-out infinite;}
 .shape1{width:220px;height:220px;background:#ff7ac6;top:-60px;left:-60px}.shape2{width:280px;height:280px;background:#6c63ff;right:-90px;bottom:-90px}
+.shape3{width:150px;height:150px;background:#ffb020;top:50%;left:50%;transform:translate(-50%,-50%)}
+.shape4{width:100px;height:100px;background:#4b5563;bottom:20%;left:20%}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+section{opacity:0;animation:fadeIn 1s ease-out forwards}
 @media(max-width:768px){.intro-card,.artifact{grid-template-columns:1fr}.artifact img{max-height:220px}}
 .Climb {display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:center}
 section, .Climb {background:var(--card);padding:28px;border-radius:22px;box-shadow:0 10px 25px rgba(0,0,0,.08);margin:22px 0}
@@ -24,15 +29,12 @@ section, .Climb {background:var(--card);padding:28px;border-radius:22px;box-shad
 .no {display: flex;
   align-items: center; 
   gap: 20px;}
-.oo {width:10%;border-radius:18px;object-fit:cover;height: max-content;float: left;
-  margin-right: 15px;}
-.anak {display: flex;
-  align-items: center; 
-  gap: 20px;text-align: top;}
+.oo {width:100%;border-radius:18px;object-fit:cover;height: max-content;}
+.anak {display: grid; grid-template-columns: 260px 1fr 260px; gap: 20px; align-items: start;}
   .fade-element {
   opacity: 0;
   transition: opacity 0.5s ease-in-out; 
 }
-.fade-element.visible {
+.fade-element.active {
   opacity: 1;
 }
